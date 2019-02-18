@@ -1,0 +1,121 @@
+.content {
+  width: 100% !important;
+  &.close {
+    width: calc(100% - 86px) !important;
+  }
+}
+
+.main-content {
+  .content-box {
+    width: 100% !important;
+    &.small-content-box {
+      margin-bottom: 15px;
+      height: auto;
+    }
+    &.medium-content-box {
+      height: auto;
+    }
+    &.big-content-box {
+      height: auto;
+    }
+    .content-box-header {
+      display: block;
+      .input-wrapper {
+        text-align: right;
+        &.input-wrapper-inline {
+          display: block;
+        }
+        .input {
+          width: 100%;
+          max-width: 100% !important;
+          margin: 0 !important;
+        }
+      }
+      .input-wrapper-title {
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.sidebar {
+  width: 0 !important;
+  .user {
+    display: none !important;
+  }
+  .logo {
+    width: 0 !important;
+  }
+  .menu {
+    padding-left: 0;
+    list-style: none;
+    .title {
+      margin-left: 20px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: none !important;
+    }
+    .menu-list {
+      padding: 10px !important;
+      display: block !important;
+      text-align: center !important;
+      width: 0 !important;
+      .fa {
+        font-size: 21px !important;
+        margin-right: 0 !important;
+      }
+      .fa-small {
+        font-size: 24px !important;
+      }
+      span {
+        font-weight: normal !important;
+        font-size: 12px !important;
+        margin-top: 5px !important;
+        display: block !important;
+      }
+    }
+  }
+  &.open {
+    width: 86px !important;
+    .logo {
+      width: 55px !important;
+    }
+    .user {
+      display: flex;
+    }
+    .menu {
+      .menu-list {
+        width: 86px !important;
+      }
+    }
+  }
+}
+
+.bar {
+  width: 100% !important;
+}
+
+.flight-risk-title {
+  display: flex;
+  align-items: center;
+  .pretitle {
+    margin-bottom: 0;
+  }
+  .pretitle-desc {
+    margin-left: 5px;
+  }
+}
+
+.flight-detail-wrapper {
+  text-align: right;
+  .wrapper {
+    display: block;
+    width: 100%;
+  }
+  .btn-all-employee {
+    float: none;
+  }
+}

@@ -1,0 +1,329 @@
+@import './base.scss';
+@import './shorthand.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  background-color: $grey3;
+  border-bottom: 1px solid $grey4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .toggle {
+    cursor: pointer;
+    border: 0;
+    padding: 15px;
+    background-color: transparent;
+    outline: 0;
+    .icon-bar {
+      width: 25px;
+      height: 4px;
+      background-color: $navy;
+      transition: all 0.2s;
+      display: block;
+      border-radius: 2px;
+      margin-bottom: 4px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    &.open {
+      background-color: $grey5;
+    }
+    .menu-img {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+    }
+    .name {
+      margin-left: 10px;
+      margin-right: 5px;
+      font-weight: bold;
+      color: $black;
+    }
+    .fa {
+      color: $black;
+      font-weight: bold;
+    }
+  }
+  .menu-list {
+    display: none;
+    position: absolute;
+    background-color: $white;
+    width: 120%;
+    left: -20%;
+    top: 100%;
+    z-index: 3;
+    margin: 0;
+    padding-left: 0;
+    border-bottom: 1px solid $grey4;
+    border-left: 1px solid $grey4;
+    &.open {
+      display: block;
+    }
+    li {
+      list-style: none;
+      a {
+        display: block;
+        color: $grey;
+        text-decoration: none;
+        padding: 10px 15px 10px 25px;
+        .with-icon {
+          float: right;
+          margin-top: 2px;
+        }
+        &:hover,
+        &:focus {
+          background-color: $grey5;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  background-color: $navy;
+  width: 86px;
+  margin-bottom: -5000px;
+  padding-bottom: 5000px;
+  color: $white;
+  transition: width 0.3s;
+  .logo {
+    width: 55px;
+    margin: 10px;
+  }
+  .logo-width {
+    width: 160px;
+    margin: 15px 10px 0;
+  }
+  .user {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    .user-img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 4px solid $white;
+    }
+    .user-details {
+      margin-left: 25px;
+      .welcome {
+        font-weight: 300;
+        margin-bottom: 7px;
+      }
+    }
+  }
+  .menu {
+    padding-left: 0;
+    list-style: none;
+    .title {
+      margin-left: 20px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: none;
+    }
+    .menu-list {
+      padding: 10px;
+      cursor: pointer;
+      display: block;
+      text-align: center;
+      width: 86px;
+      .fa {
+        font-size: 21px;
+      }
+      .fa-small {
+        font-size: 24px;
+      }
+      span {
+        font-weight: normal;
+        font-size: 12px;
+        margin-top: 5px;
+        display: block;
+      }
+      &:hover,
+      &.active {
+        border-right: 5px solid $green;
+        background-color: $navyhover;
+      }
+    }
+  }
+  &.open {
+    width: 260px;
+    .user {
+      display: flex;
+    }
+    .menu {
+      .title {
+        display: block;
+      }
+      .menu-list {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        width: 260px;
+      }
+      .fa {
+        font-size: 21px;
+        margin-right: 15px;
+      }
+      span {
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.content {
+  width: calc(100% - 86px);
+  &.close {
+    width: calc(100% - 260px);
+  }
+}
+
+.main-content {
+  background-color: $grey2;
+  padding: 15px;
+  .content-box {
+    background-color: $white;
+    display: inline-block;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 8px 0px;
+    &.small-content-box {
+      width: 25%;
+      vertical-align: top;
+      height: 406px;
+    }
+    &.medium-content-box {
+      width: 50%;
+      vertical-align: top;
+      height: 406px;
+    }
+    &.big-content-box {
+      width: calc(75% - 15px);
+      vertical-align: top;
+      height: 406px;
+    }
+    &.large-content-box {
+      width: 100%;
+    }
+    .content-box-header {
+      border-bottom: 2px solid $grey4;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .input-wrapper {
+        &.input-wrapper-inline {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+        .input {
+          padding: 8px 12px;
+          font-size: 13px;
+          border: 1px solid $grey4;
+          &.input-inline {
+            margin-left: 10px;
+          }
+        }
+        .input-wrapper-title {
+          color: $grey;
+          font-weight: bold;
+        }
+      }
+    }
+    .content-box-inside {
+      padding: 15px;
+    }
+    .pretitle {
+      color: $grey;
+      font-size: 22px;
+      font-weight: 500;
+    }
+    .pretitle-desc {
+      color: $black;
+      // font-weight: normal;
+      opacity: 0.8;
+      font-size: 16px;
+    }
+  }
+}
+
+.bar-wrapper {
+  margin-bottom: 15px;
+  .bar-text {
+    font-size: 18px;
+    color: $grey;
+    margin-bottom: 10px;
+    font-weight: bold;
+    span {
+      color: $black;
+      font-size: 14px;
+      font-weight: normal;
+    }
+  }
+  .bar {
+    border: 1px solid $grey4;
+    background-color: $grey3;
+    width: 100%;
+    .bar-fill {
+      text-align: center;
+      padding: 3px 0;
+    }
+    .bar-fill-text {
+      color: $white;
+    }
+  }
+}
+
+.flight-detail-wrapper {
+  .wrapper {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+  }
+  .btn-all-employee {
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    background-color: $blue;
+    color: $white;
+    border-color: $blue;
+  }
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: 0;
+}
+
+@media (max-width: 767px) {
+  @import './mobile.scss';
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1025px) {
+  @import './medium.scss';
+}
